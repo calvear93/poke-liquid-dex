@@ -1,0 +1,202 @@
+{
+	"instructions": [
+		"This is a modern React TypeScript SPA template with custom libraries for scalable frontend applications",
+		"Programming language is ENGLISH - variables, functions, components, comments, and documentation",
+		"Exception: preserve business entities in original language when explicitly defined by user",
+		"Always use explicit TypeScript types and avoid 'any'",
+		"Use tabs for indentation (tabWidth: 4), not spaces",
+		"Use single quotes, trailing commas, and semicolons (prettier config)",
+		"Include proper error handling with try-catch blocks and error boundaries",
+		"Follow React functional component patterns with React.FC type",
+		"Use Zod schemas for form validation and prop validation when complex",
+		"Apply accessibility features (ARIA attributes, semantic HTML) to all components",
+		"Import with .tsx/.ts extensions and use path aliases (#libs/*)",
+		"For useInjection hook, import from relative path to app.ioc.ts (e.g., './app.ioc.ts', '../app.ioc.ts')",
+		"Create comprehensive unit tests with .spec.tsx/.spec.ts files using Vitest",
+		"Add JSDoc comments for public components and hooks (main descriptions uppercase, params lowercase)",
+		"Use async/await instead of Promises",
+		"Follow kebab-case for file names, PascalCase for components, camelCase for functions",
+		"Use '_' prefix for private/internal variables and methods",
+		"CRITICAL: NEVER hardcode URLs, API keys, or configuration in components",
+		"ALL configuration must be injectable through custom IoC container with React Context",
+		"Define configuration as far out as possible (in app bootstrap)",
+		"Non-secret configs in env/appsettings.json, secrets in env/main.local.env.json",
+		"Mock services and config through the custom IoC container (InversionOfControlProvider + mockIoCValues Map), not MSW",
+		"ALWAYS create accessible components with proper ARIA labels and semantic HTML",
+		"Keep business logic clean and testable by using custom hooks and dependency injection",
+		"Maintain at least 80% test coverage with comprehensive unit and integration tests",
+		"Use CSS Modules for component styling with UnoCSS utilities for common patterns",
+		"Implement proper loading and error states for all async operations",
+		"Follow React Router 7+ patterns for client-side routing via #libs/router",
+		"Use Jotai atoms and the custom IoC container for state management and dependency injection",
+		"Start features through the OpenSpec spec-driven loop (.ai/skills/spec-*.md): propose -> design -> tasks -> implement -> archive"
+	],
+	"context": {
+		"framework": "React 19+ with TypeScript 5+",
+		"runtime": "Browser with Vite development server",
+		"bundler": "Vite (fast build and dev server with HMR)",
+		"language": "TypeScript",
+		"validation": "Zod v4+ (TypeScript-first schema validation)",
+		"httpClient": "Fetch through services injected via the custom IoC container",
+		"testing": "Vitest (fast unit testing framework)",
+		"testingLibrary": "React Testing Library for component testing",
+		"coverage": "Vitest Coverage V8",
+		"mutationTesting": "Stryker Mutator",
+		"router": "React Router 7+ via #libs/router (client-side routing)",
+		"stateManagement": "Jotai atoms + custom IoC container",
+		"styling": "CSS Modules + UnoCSS (atomic CSS)",
+		"buildTool": "Vite",
+		"formatting": "Prettier with tabs, single quotes, trailing commas",
+		"codeQuality": "ESLint + Prettier + Stylelint",
+		"mocking": "Custom IoC container mocks (InversionOfControlProvider + mockIoCValues Map)",
+		"packageManager": "pnpm (fast, disk space efficient)"
+	},
+	"scripts": {
+		"development": {
+			"start": "pnpm start",
+			"description": "Start development server with HMR and hot reload"
+		},
+		"testing": {
+			"test": "pnpm test --coverage --run",
+			"description": "Run tests with coverage (for CI/validation)",
+			"testWatch": "pnpm test",
+			"description_watch": "Run tests in watch mode (for development)",
+			"testMutation": "pnpm test:mutation",
+			"description_mutation": "Run Stryker mutation testing for test quality"
+		},
+		"codeQuality": {
+			"lint": "pnpm lint",
+			"description": "Check and fix code style issues, warnings and errors",
+			"format": "pnpm format",
+			"description_format": "Format code using Prettier"
+		},
+		"build": {
+			"build": "pnpm build",
+			"description": "Build project for production",
+			"preview": "pnpm preview",
+			"description_preview": "Preview production build locally"
+		}
+	},
+	"patterns": {
+		"component": {
+			"type": "React.FC<ComponentNameProps>",
+			"props": "Define comprehensive props interface with JSDoc comments",
+			"styling": "CSS Modules with className={styles.className}",
+			"accessibility": "Include ARIA attributes, semantic HTML, and proper focus management"
+		},
+		"page": {
+			"suffix": ".page.tsx for page components",
+			"routing": "Use React Router 7+ via #libs/router (loader, lazy Component, nested layouts)",
+			"layout": "Integrate with layout components (AppLayout or custom)",
+			"seo": "Include proper meta tags and document titles"
+		},
+		"hook": {
+			"prefix": "use prefix for custom hooks (e.g., useUser, useApi)",
+			"returns": "Proper TypeScript return types with generics when needed",
+			"cleanup": "Use useEffect cleanup for subscriptions and async operations",
+			"injection": "Integration with custom IoC container using useInjection hook"
+		},
+		"validation": {
+			"forms": "Use Zod schemas for form validation",
+			"props": "Use TypeScript interfaces for component props",
+			"schemas": "Define validation schemas with proper error messages"
+		},
+		"state": {
+			"local": "useState for component-local state",
+			"shared": "Jotai atoms (derived/async) for shared state",
+			"injection": "useInjection hook for dependency injection",
+			"async": "Proper loading, error, and success state management"
+		},
+		"routing": {
+			"structure": "Client-side routing with React Router 7+ via #libs/router",
+			"parameters": "Type-safe route parameters",
+			"navigation": "Link component / useRouter for programmatic navigation",
+			"protection": "Route guards for authentication and authorization"
+		},
+		"configuration": {
+			"principle": "NEVER hardcode - always inject configuration through IoC container",
+			"appsettings": "Non-secret config in env/appsettings.json",
+			"secrets": "Secrets in env/main.local.env.json",
+			"injection": "Define in app bootstrap, inject into components via useInjection",
+			"example": "config.apiBaseUrl vs hardcoded 'https://api.example.com'",
+			"pattern": "Use custom IoC container for all external dependencies"
+		},
+		"styling": {
+			"modules": "CSS Modules for component-specific styling",
+			"utilities": "UnoCSS for atomic CSS utilities (spacing, colors, layout)",
+			"responsive": "Mobile-first responsive design patterns",
+			"themes": "Support for light/dark themes when applicable"
+		},
+		"accessibility": {
+			"aria": "Proper ARIA labels, roles, and descriptions",
+			"semantic": "Use semantic HTML elements appropriately",
+			"keyboard": "Ensure keyboard navigation support",
+			"focus": "Proper focus management for interactive elements",
+			"testing": "Include accessibility testing in component tests"
+		},
+		"testing": {
+			"framework": "Vitest with React Testing Library",
+			"structure": "describe, beforeEach, it patterns with user interactions",
+			"organization": "// Rendering tests, // User interactions, // Error scenarios",
+			"variables": "_variable for private/internal test variables",
+			"coverage": "Maintain at least 80% coverage",
+			"patterns": "render, screen, fireEvent, waitFor from React Testing Library",
+			"accessibility": "Test ARIA attributes and keyboard navigation",
+			"mocking": "Mock dependencies via InversionOfControlProvider with a mockIoCValues Map (no MSW)"
+		},
+		"comments": {
+			"jsdoc": {
+				"main_description": "Main description paragraphs start with uppercase",
+				"parameters_returns": "Parameters, returns, and tags start with lowercase",
+				"example": "/**\n * User profile component that displays user information.\n *\n * @param user - user data object\n * @returns JSX element with user profile\n */"
+			},
+			"inline": "// lowercase comment",
+			"section": "// SECTION: description"
+		}
+	},
+	"libraries": {
+		"ioc": "#libs/ioc - useInjection, createContainer, InversionOfControlProvider",
+		"feature": "#libs/feature - useFeature, FeatureProvider, feature flag management",
+		"router": "#libs/router - custom router utilities and type-safe routing"
+	},
+	"fileStructure": {
+		"components": "src/app/components/ - reusable UI components",
+		"pages": "src/app/pages/ - page-level components with .page.tsx suffix",
+		"layouts": "src/app/layouts/ - layout components for common UI patterns",
+		"hooks": "Custom hooks in component directories or shared in libs",
+		"libs": "src/libs/ - shared libraries and utilities",
+		"assets": "src/app/assets/ - static assets like images and icons",
+		"styles": "src/app/styles/ - global styles and CSS variables"
+	},
+	"codeStyle": {
+		"indentation": "tabs (4 spaces width)",
+		"quotes": "single quotes",
+		"semicolons": "always",
+		"trailingCommas": "all",
+		"printWidth": 80,
+		"bracketSpacing": true,
+		"arrowParens": "always"
+	},
+	"avoid": [
+		"Using 'any' type - always provide explicit TypeScript types",
+		"Hardcoded values - use environment variables and IoC container injection",
+		"Using import.meta.env directly in components - use dependency injection",
+		"Missing error handling - implement error boundaries and try-catch blocks",
+		"Skipping validation - use Zod schemas for form validation",
+		"Missing accessibility attributes - apply ARIA labels and semantic HTML",
+		"Missing unit tests - create comprehensive .spec.tsx files",
+		"Inconsistent file naming - use kebab-case for files, PascalCase for components",
+		"Incorrect JSDoc capitalization - main descriptions uppercase, params lowercase",
+		"Spaces instead of tabs - use tab indentation",
+		"Double quotes - use single quotes consistently",
+		"Missing loading/error states - handle async operations properly",
+		"Mixing business logic in components - extract to custom hooks",
+		"Non-responsive design - ensure mobile-first responsive patterns",
+		"Non-English naming - use English for all technical naming",
+		"Missing CSS Modules - use CSS Modules for component styling",
+		"Forgetting React.FC type - use proper TypeScript component types",
+		"Direct DOM manipulation - use React patterns and refs appropriately",
+		"Class components - use functional components with hooks",
+		"Inline styles - use CSS Modules and utility classes"
+	]
+}

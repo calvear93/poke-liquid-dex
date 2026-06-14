@@ -1,0 +1,108 @@
+{
+	"package-json": {
+		"type": "object",
+		"properties": {
+			"ENV": {
+				"type": ["string"],
+				"nullable": false
+			},
+			"DESCRIPTION": {
+				"type": ["string"],
+				"nullable": false
+			},
+			"NAME": {
+				"type": ["string"],
+				"nullable": false
+			},
+			"PROJECT": {
+				"type": ["string"],
+				"nullable": false
+			},
+			"TITLE": {
+				"type": ["string"],
+				"nullable": false
+			},
+			"VERSION": {
+				"type": ["string"],
+				"nullable": false
+			}
+		}
+	},
+	"app-settings": {
+		"type": "object",
+		"properties": {
+			"BASE_URL": {
+				"type": ["string"],
+				"nullable": false
+			},
+			"FONT_FAMILY": {
+				"type": ["string"],
+				"nullable": false
+			},
+			"FONT_WEIGHTS": {
+				"type": ["string"],
+				"nullable": false
+			},
+			"SERVICE_WORKER": {
+				"type": ["boolean"],
+				"nullable": false
+			},
+			"APP": {
+				"type": ["object"],
+				"properties": {
+					"ENV": {
+						"type": ["string"],
+						"nullable": false
+					},
+					"NAME": {
+						"type": ["string"],
+						"nullable": false
+					},
+					"VERSION": {
+						"type": ["string"],
+						"nullable": false
+					},
+					"NO_SCRIPT": {
+						"type": ["string"],
+						"nullable": false
+					},
+					"API_URL": {
+						"type": ["string"],
+						"nullable": false
+					},
+					"ARTWORK_URL": {
+						"type": ["string"],
+						"nullable": false
+					},
+					"SPRITE_URL": {
+						"type": ["string"],
+						"nullable": false
+					},
+					"CRIES_URL": {
+						"type": ["string"],
+						"nullable": false
+					},
+					"MAX_DEX": {
+						"type": ["integer"],
+						"nullable": false
+					},
+					"CACHE_VERSION": {
+						"type": ["string"],
+						"nullable": false
+					}
+				},
+				"nullable": false
+			},
+			"NODE_ENV": {
+				"type": ["string"],
+				"nullable": false
+			}
+		}
+	},
+	"secrets": {
+		"type": "object"
+	},
+	"local": {
+		"type": "object"
+	}
+}

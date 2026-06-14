@@ -1,0 +1,41 @@
+.stat {
+	display: grid;
+	grid-template-columns: 96px 38px 1fr;
+	gap: 12px;
+	align-items: center;
+	margin-bottom: 11px;
+}
+
+.label {
+	color: var(--text-dim);
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.value {
+	font-weight: bold;
+	font-size: 13px;
+	font-family: 'Space Mono', monospace;
+	text-align: right;
+}
+
+.track {
+	display: block;
+	height: 12px;
+	overflow: hidden;
+	background: var(--track);
+	border-radius: 7px;
+	box-shadow: inset 0 1px 2px rgb(0, 0, 0, 0.22);
+}
+
+.fill {
+	display: block;
+	width: 0;
+	min-width: 7px;
+	height: 100%;
+	border-radius: 7px;
+	box-shadow:
+		inset 0 1px 0 rgb(255, 255, 255, 0.5),
+		inset 0 -2px 3px rgb(0, 0, 0, 0.14);
+	transition: width 1s var(--ease);
+}

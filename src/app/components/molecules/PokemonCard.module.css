@@ -1,0 +1,135 @@
+.card {
+	position: relative;
+	padding: 16px 16px 14px;
+	overflow: hidden;
+	background: linear-gradient(160deg, var(--glass-bg), var(--glass-bg-2));
+	border: 1px solid var(--glass-border);
+	border-radius: var(--r-md);
+	box-shadow:
+		var(--shadow-sm),
+		inset 0 1px 0 var(--glass-hi);
+	transition:
+		transform 0.4s var(--ease-spring),
+		box-shadow 0.4s var(--ease);
+	animation: card-in 0.55s var(--ease) backwards;
+	animation-delay: calc(var(--i, 0) * 28ms);
+	contain-intrinsic-size: 230px;
+	content-visibility: auto;
+}
+
+@keyframes card-in {
+	from {
+		transform: translateY(22px) scale(0.94);
+		opacity: 0;
+	}
+
+	to {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+.card:active {
+	transform: scale(0.95);
+}
+
+@media (hover: hover) {
+	.card:hover {
+		box-shadow:
+			var(--shadow),
+			inset 0 1px 0 var(--glass-hi);
+		transform: translateY(-6px) scale(1.02);
+
+		& .image img {
+			transform: scale(1.1) rotate(-3deg);
+		}
+	}
+}
+
+.open {
+	position: absolute;
+	z-index: 1;
+	background: none;
+	border: none;
+	cursor: pointer;
+	inset: 0;
+}
+
+.glow {
+	position: absolute;
+	z-index: 0;
+	background: radial-gradient(
+		85% 70% at 50% 18%,
+		var(--tint, transparent),
+		transparent 72%
+	);
+	opacity: 0;
+	transition: opacity 0.6s var(--ease);
+	pointer-events: none;
+	inset: 0;
+
+	.tinted & {
+		opacity: 0.55;
+	}
+}
+
+.fav {
+	position: absolute;
+	top: 11px;
+	left: 12px;
+	z-index: 3;
+}
+
+.num {
+	position: absolute;
+	top: 13px;
+	right: 15px;
+	z-index: 2;
+	color: var(--text-faint);
+	font-weight: bold;
+	font-size: 12px;
+	font-family: 'Space Mono', monospace;
+	pointer-events: none;
+}
+
+.image {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	place-items: center;
+	margin-bottom: 6px;
+	pointer-events: none;
+	aspect-ratio: 1;
+
+	& img {
+		width: 88%;
+		height: 88%;
+		object-fit: contain;
+		filter: drop-shadow(0 10px 14px rgb(0, 0, 0, 0.28));
+		transition: transform 0.45s var(--ease-spring);
+	}
+}
+
+.name {
+	position: relative;
+	z-index: 2;
+	display: block;
+	overflow: hidden;
+	font-weight: bold;
+	font-size: 16px;
+	white-space: nowrap;
+	text-transform: capitalize;
+	text-overflow: ellipsis;
+	pointer-events: none;
+}
+
+.types {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	min-height: 22px;
+	margin-top: 8px;
+	pointer-events: none;
+}

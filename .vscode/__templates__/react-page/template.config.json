@@ -1,0 +1,13 @@
+{
+	"name": "React: Page",
+	"allowExistingFolder": true,
+	"variables": [
+		"pageName",
+		{
+			"name": "title",
+			"style": {
+				"noTransformation": true
+			}
+		}
+	]
+}

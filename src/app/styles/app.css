@@ -1,0 +1,167 @@
+/* ============================================================
+   Pokédex · Liquid Glass — global tokens, theme & atmosphere
+   ============================================================ */
+
+:root {
+	--page-bg: #e7ebf7;
+	--text: #1b1530;
+	--text-dim: rgb(35, 28, 60, 0.62);
+	--text-faint: rgb(35, 28, 60, 0.4);
+	--glass-bg: rgb(255, 255, 255, 0.55);
+	--glass-bg-2: rgb(255, 255, 255, 0.35);
+	--glass-border: rgb(255, 255, 255, 0.75);
+	--glass-hi: rgb(255, 255, 255, 0.95);
+	--bar-bg: rgb(255, 255, 255, 0.5);
+	--track: rgb(18, 14, 42, 0.14);
+	--field-bg: rgb(255, 255, 255, 0.55);
+	--shadow: 0 14px 40px -12px rgb(40, 30, 90, 0.3);
+	--shadow-sm: 0 6px 18px -8px rgb(40, 30, 90, 0.3);
+	--blob1: rgb(255, 135, 180, 0.6);
+	--blob2: rgb(120, 165, 255, 0.6);
+	--blob3: rgb(125, 235, 190, 0.55);
+	--blob4: rgb(255, 205, 120, 0.55);
+	--blob5: rgb(190, 140, 255, 0.55);
+	--noise-op: 0.45;
+	--noise-blend: soft-light;
+	--r-lg: 30px;
+	--r-md: 22px;
+	--r-sm: 15px;
+	--ease: cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) {
+		--page-bg: #070611;
+		--text: #f4f1ff;
+		--text-dim: rgb(232, 226, 255, 0.62);
+		--text-faint: rgb(232, 226, 255, 0.38);
+		--glass-bg: rgb(255, 255, 255, 0.065);
+		--glass-bg-2: rgb(255, 255, 255, 0.03);
+		--glass-border: rgb(255, 255, 255, 0.14);
+		--glass-hi: rgb(255, 255, 255, 0.3);
+		--bar-bg: rgb(255, 255, 255, 0.1);
+		--track: rgb(255, 255, 255, 0.16);
+		--field-bg: rgb(255, 255, 255, 0.07);
+		--shadow: 0 18px 50px -12px rgb(0, 0, 0, 0.65);
+		--shadow-sm: 0 8px 24px -10px rgb(0, 0, 0, 0.6);
+		--blob1: rgb(255, 61, 127, 0.42);
+		--blob2: rgb(60, 120, 255, 0.42);
+		--blob3: rgb(0, 217, 163, 0.36);
+		--blob4: rgb(255, 170, 60, 0.34);
+		--blob5: rgb(150, 80, 255, 0.4);
+		--noise-op: 0.5;
+		--noise-blend: overlay;
+	}
+}
+
+:root[data-theme='dark'] {
+	--page-bg: #070611;
+	--text: #f4f1ff;
+	--text-dim: rgb(232, 226, 255, 0.62);
+	--text-faint: rgb(232, 226, 255, 0.38);
+	--glass-bg: rgb(255, 255, 255, 0.065);
+	--glass-bg-2: rgb(255, 255, 255, 0.03);
+	--glass-border: rgb(255, 255, 255, 0.14);
+	--glass-hi: rgb(255, 255, 255, 0.3);
+	--bar-bg: rgb(255, 255, 255, 0.1);
+	--track: rgb(255, 255, 255, 0.16);
+	--field-bg: rgb(255, 255, 255, 0.07);
+	--shadow: 0 18px 50px -12px rgb(0, 0, 0, 0.65);
+	--shadow-sm: 0 8px 24px -10px rgb(0, 0, 0, 0.6);
+	--blob1: rgb(255, 61, 127, 0.42);
+	--blob2: rgb(60, 120, 255, 0.42);
+	--blob3: rgb(0, 217, 163, 0.36);
+	--blob4: rgb(255, 170, 60, 0.34);
+	--blob5: rgb(150, 80, 255, 0.4);
+	--noise-op: 0.5;
+	--noise-blend: overlay;
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#app {
+	width: 100%;
+	min-height: 100dvh;
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	color: var(--text);
+	font-family: 'Manrope', system-ui, sans-serif;
+	line-height: 1.5;
+	background: var(--page-bg);
+	transition:
+		background 0.5s var(--ease),
+		color 0.5s var(--ease);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body:before {
+	position: fixed;
+	z-index: -2;
+	background:
+		radial-gradient(42% 50% at 18% 22%, var(--blob1), transparent 68%),
+		radial-gradient(40% 48% at 82% 18%, var(--blob2), transparent 66%),
+		radial-gradient(46% 52% at 75% 82%, var(--blob3), transparent 68%),
+		radial-gradient(44% 50% at 22% 78%, var(--blob4), transparent 66%),
+		radial-gradient(50% 50% at 50% 50%, var(--blob5), transparent 70%);
+	filter: blur(46px) saturate(125%);
+	animation: drift 34s ease-in-out infinite alternate;
+	content: '';
+	inset: -25%;
+	will-change: transform;
+}
+
+body:after {
+	position: fixed;
+	z-index: -1;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+	opacity: var(--noise-op);
+	mix-blend-mode: var(--noise-blend);
+	pointer-events: none;
+	inset: 0;
+}
+
+@keyframes drift {
+	0% {
+		transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+	}
+
+	50% {
+		transform: translate3d(2%, -2%, 0) rotate(4deg) scale(1.07);
+	}
+
+	100% {
+		transform: translate3d(-2%, 2%, 0) rotate(-3deg) scale(1.04);
+	}
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+	margin-block: 0;
+}
+
+button {
+	font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*:before,
+	*:after {
+		transition-duration: 0.001s !important;
+		animation-duration: 0.001s !important;
+		animation-iteration-count: 1 !important;
+	}
+
+	body:before {
+		animation: none;
+	}
+}

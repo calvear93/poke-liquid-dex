@@ -1,0 +1,29 @@
+.fav {
+	display: grid;
+	width: 30px;
+	height: 30px;
+	color: var(--text-faint);
+	font-size: 15px;
+	line-height: 1;
+	background: var(--field-bg);
+	border: 1px solid var(--glass-border);
+	border-radius: 50%;
+	box-shadow: inset 0 1px 0 var(--glass-hi);
+	cursor: pointer;
+	transition:
+		transform 0.3s var(--ease-spring),
+		color 0.25s,
+		background 0.25s;
+	place-items: center;
+
+	&:active {
+		transform: scale(0.78);
+	}
+}
+
+.on {
+	color: #ffffff;
+	background: linear-gradient(150deg, #ff5e8a, #ff3d6e);
+	border-color: transparent;
+	box-shadow: 0 4px 12px -4px rgb(255, 61, 110, 0.7);
+}

@@ -1,0 +1,18 @@
+.total {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 14px;
+	padding-top: 14px;
+	border-top: 1px solid var(--glass-border);
+}
+
+.label {
+	color: var(--text-dim);
+	font-weight: bold;
+}
+
+.total b {
+	font-size: 22px;
+	font-family: 'Bricolage Grotesque', sans-serif;
+}

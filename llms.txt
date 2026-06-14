@@ -1,0 +1,69 @@
+# React TypeScript Template (Vite)
+
+> A modern, production-ready React TypeScript template that provides a robust foundation for building scalable frontend applications with type-safe development, modern tooling, and comprehensive testing.
+
+This template serves as a starting point for creating enterprise-grade React applications featuring dependency injection, feature flags, advanced routing, and production-ready configurations.
+
+## Documentation
+
+- [AGENTS.md](AGENTS.md): Canonical, tool-agnostic instructions for all AI assistants (stack, rules, conventions) — single source of truth
+- [README](README.md): Main project documentation with setup instructions, architecture overview, and usage examples
+- [Architecture Guide](.github/instructions/architecture-guide.instructions.md): Folder topology, configuration/IoC wiring, routing and import conventions
+- [Coding Standards](.github/instructions/coding-standards.instructions.md): Formatting, naming, file suffixes, TypeScript rules and anti-patterns
+- [Patterns](.github/instructions/patterns.instructions.md): Copy-paste recipes for components, hooks, services, schemas, forms and tests
+- [Environment Configuration](env/README.md): Guide for configuring environment variables and settings
+- [Pages Structure](src/app/pages/README.md): Documentation for page components and routing structure
+- [Atoms Documentation](src/app/atoms/README.md): Guide for Jotai atoms and global state management
+- [Layouts Documentation](src/app/layouts/README.md): Documentation for application layouts and common structures
+- [Code Exemplars](exemplars.md): High-quality code examples demonstrating coding standards and patterns
+- [Change Log](CHANGELOG.md): Project change history and release notes
+- [License](LICENSE.md): MIT license terms and conditions
+
+## Architecture & Libraries
+
+- [IoC Container](src/libs/ioc/README.md): Documentation for the custom dependency injection system
+- [Feature Flags](src/libs/feature/README.md): Guide for the feature flag management system
+- [Router](src/libs/router/README.md): Documentation for the enhanced routing system
+- [App Structure](src/app/App.tsx): Main application component and initialization logic
+
+## Configuration & Setup
+
+- [Package Configuration](package.json): Project dependencies, scripts, and metadata
+- [Vite Configuration](vite.config.ts): Build tool configuration and plugins
+- [TypeScript Configuration](tsconfig.json): TypeScript compiler options and settings
+- [UnoCSS Configuration](unocss.config.ts): Atomic CSS framework configuration
+- [ESLint Configuration](eslint.config.js): Code quality and linting rules
+- [Prettier Configuration](.prettierrc): Code formatting configuration
+- [Stylelint Configuration](.stylelintrc): CSS linting and style quality rules
+- [Vitest Configuration](vitest.config.ts): Testing framework configuration
+- [VS Code Settings](.vscode/settings.json): IDE configuration and editor preferences
+
+## Environment & Deployment
+
+- [Docker Configuration](Dockerfile): Containerization setup for the application
+- [Nginx Configuration](nginx.conf): Web server configuration for production deployment
+- [Application Settings](env/appsettings.json): Non-secret environment configuration
+- [Development Environment](env/dev.local.env.json): Local development environment variables
+
+Note: Environment names are project-defined. This repo ships with `dev` and `release` as examples; you can add `qa`, `prod`, etc. by adding corresponding files under `env/`.
+
+## Testing & Quality
+
+- [Mutation Testing](stryker.conf.json): Configuration for mutation testing with Stryker
+- [Test Setup](src/__tests__/AppRouter.test.tsx): Example test file for the application router
+- [IoC Testing Guide](src/app/pages/detail/Detail.page.spec.tsx): Example of testing with InversionOfControlProvider for dependency injection
+
+## Optional
+
+- [Architecture Blueprint Generator](.github/prompts/architecture-blueprint-generator.prompt.md): Prompt for generating architecture documentation
+- [Code Exemplars Generator](.github/prompts/code-exemplars-blueprint-generator.prompt.md): Prompt for generating code examples and patterns
+- [Code Quality Improvement](.github/prompts/code-quality-improvement.prompt.md): Guidelines for improving code quality
+- [Component Creation](.github/prompts/component-creation.prompt.md): Best practices for creating React components
+- [Component Documentation](.github/prompts/component-documentation.prompt.md): Guidelines for documenting React components
+- [Custom Hook Creation](.github/prompts/custom-hook-creation.prompt.md): Patterns for creating reusable custom hooks
+- [Page Creation](.github/prompts/page-creation.prompt.md): Guidelines for creating application pages
+- [README Generator](.github/prompts/readme-blueprint-generator.prompt.md): Prompt for generating comprehensive README files
+- [Review and Refactor](.github/prompts/review-and-refactor.prompt.md): Guidelines for code review and refactoring
+- [Security Review](.github/prompts/security-review.prompt.md): Security considerations and review guidelines
+- [Technology Stack Generator](.github/prompts/technology-stack-blueprint-generator.prompt.md): Prompt for documenting technology stack and architecture
+- [Testing Creation](.github/prompts/testing-creation.prompt.md): Best practices for writing comprehensive tests

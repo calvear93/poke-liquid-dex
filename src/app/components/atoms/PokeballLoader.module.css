@@ -1,0 +1,45 @@
+.loader {
+	display: grid;
+	gap: 18px;
+	place-items: center;
+	padding: 70px 20px;
+}
+
+.ball {
+	position: relative;
+	width: 70px;
+	height: 70px;
+	background: linear-gradient(#ff5267 0 50%, #ffffff 50% 100%);
+	border-radius: 50%;
+	box-shadow:
+		inset 0 -8px 18px rgb(0, 0, 0, 0.2),
+		inset 0 2px 0 rgb(255, 255, 255, 0.6),
+		var(--shadow);
+	animation: spin 1.1s linear infinite;
+}
+
+.ball:after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	background: #ffffff;
+	border: 4px solid #2a2535;
+	border-radius: 50%;
+	box-shadow: 0 0 0 5px #ffffff;
+	transform: translate(-50%, -50%);
+	content: '';
+}
+
+.loader p {
+	color: var(--text-dim);
+	font-weight: 600;
+	letter-spacing: 0.04em;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
