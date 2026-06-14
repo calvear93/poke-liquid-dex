@@ -25,8 +25,8 @@ export const TopBar = (): React.ReactElement => {
 				<div className={styles.brand}>
 					<div aria-hidden='true' className={styles.logo} />
 					<div className={styles.brandText}>
-						<h1>Pokédex</h1>
-						<span>Liquid Glass</span>
+						<h1>Poke Liquid Dex</h1>
+						<span>Pokédex</span>
 					</div>
 				</div>
 				<IconButton

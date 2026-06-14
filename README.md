@@ -24,6 +24,25 @@
 
 ---
 
+## 📸 Vistazo
+
+<table>
+  <tr>
+    <td width="50%"><img src="./docs/screenshots/01-gallery-dark.png" alt="Galería — tema oscuro" /></td>
+    <td width="50%"><img src="./docs/screenshots/03-gallery-light.png" alt="Galería — tema claro" /></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Galería</b> · tema oscuro</sub></td>
+    <td align="center"><sub><b>Galería</b> · tema claro</sub></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="./docs/screenshots/02-detail-dark.png" alt="Ficha de detalle" /></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><sub><b>Ficha «Completo+»</b> · estadísticas, tipos, favorito, comparar y compartir</sub></td>
+  </tr>
+</table>
+
 ## ✨ Funcionalidades
 
 - 🖼️ **Galería** por generación (I–IX) con carga perezosa de imágenes y tarjetas de vidrio tintadas por tipo.
@@ -37,18 +56,18 @@
 
 ## 🎨 Liquid Glass
 
-La interfaz toma prestado el lenguaje visual *liquid glass* de Apple: superficies de vidrio
+La interfaz toma prestado el lenguaje visual _liquid glass_ de Apple: superficies de vidrio
 translúcido con desenfoque, una atmósfera de _blobs_ de gradiente de colores que se filtra a
 través de cada panel, y bordes redondeados y suaves. La paleta vive en
 [`src/app/styles/app.css`](src/app/styles/app.css) como _tokens_ de tema (claro/oscuro), y los
 tintes por tipo en [`src/app/constants/pokedex.constants.ts`](src/app/constants/pokedex.constants.ts).
 
-| Token            | Claro                  | Oscuro                 |
-| ---------------- | ---------------------- | ---------------------- |
-| Fondo            | `#e7ebf7`              | `#070611`              |
-| Vidrio           | `rgba(255,255,255,.55)`| `rgba(255,255,255,.065)`|
-| Acento (pokébola)| `#ff5267`              | `#ff5267`              |
-| Blobs            | rosa · azul · teal · oro · violeta                |
+| Token             | Claro                              | Oscuro                   |
+| ----------------- | ---------------------------------- | ------------------------ |
+| Fondo             | `#e7ebf7`                          | `#070611`                |
+| Vidrio            | `rgba(255,255,255,.55)`            | `rgba(255,255,255,.065)` |
+| Acento (pokébola) | `#ff5267`                          | `#ff5267`                |
+| Blobs             | rosa · azul · teal · oro · violeta |
 
 ## 🧱 Arquitectura
 
